@@ -14,7 +14,7 @@ function PopupWithForm(props) {
           type="button"
           onClick={props.onClose}
           aria-label="Закрыть"
-        ></button>
+        />
         <form
           className={`form form_${props.name}`}
           action="#"

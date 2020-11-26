@@ -20,44 +20,44 @@ export function Main(props) {
   }, []);
 
   return (
-      <main>
-        <section className="section profile">
-          <div className="profile__content">
-            <div className="profile__image-group">
-              <img
-                src={userAvatar}
-                alt="Аватар пользователя"
-                className="profile__image"
-              />
-              <button
-                onClick={props.onEditAvatar}
-                className="profile__image-edit"
-              ></button>
-            </div>
-            <div className="profile__info">
-              <h1 className="profile__info-title">{userName}</h1>
-              <button
-                onClick={props.onEditProfile}
-                type="button"
-                className="profile__edit-button"
-                aria-label="Закрыть"
-              ></button>
-              <p className="profile__description">{userDescription}</p>
-            </div>
+    <main>
+      <section className="section profile">
+        <div className="profile__content">
+          <div className="profile__image-group">
+            <img
+              src={userAvatar}
+              alt="Аватар пользователя"
+              className="profile__image"
+            />
+            <button
+              onClick={props.onEditAvatar}
+              className="profile__image-edit"
+            />
           </div>
-          <button
-            onClick={props.onAddPlace}
-            type="button"
-            className="profile__button"
-          ></button>
-        </section>
-        <section className="section elements">
-          <ul className="elements__list">
+          <div className="profile__info">
+            <h1 className="profile__info-title">{userName}</h1>
+            <button
+              onClick={props.onEditProfile}
+              type="button"
+              className="profile__edit-button"
+              aria-label="Закрыть"
+            />
+            <p className="profile__description">{userDescription}</p>
+          </div>
+        </div>
+        <button
+          onClick={props.onAddPlace}
+          type="button"
+          className="profile__button"
+        />
+      </section>
+      <section className="section elements">
+        <ul className="elements__list">
           {cards.map((item) => (
-          <Card key={item._id} card={item} onCardClick={props.onCardClick}/>
-        ))}
-          </ul>
-        </section>
-      </main>
+            <Card key={item._id} card={item} onCardClick={props.onCardClick} />
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }
