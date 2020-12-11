@@ -31,17 +31,13 @@ class Api {
     }).then(handleOriginalResponse);
   }
 
-  addLike(cardId) {
+  changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._url}/cards/likes/${cardId}`, {
-      method: "PUT",
-      headers: this.headers,
-    }).then(handleOriginalResponse);
-  }
-
-  deleteLike(cardId) {
-    return fetch(`${this._url}/cards/likes/${cardId}`, {
-      method: "DELETE",
-      headers: this.headers,
+      method: isLiked ? "PUT": "DELETE",
+      headers: {
+        authorization: this._authorization,
+        "Content-Type": this._contentType,
+      },
     }).then(handleOriginalResponse);
   }
 
